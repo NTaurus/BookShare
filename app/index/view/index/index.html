@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="public/static/img/favicon.png">
+
+    <title>登录</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="public/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/static/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="public/static/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="public/static/css/style.css" rel="stylesheet">
+    <link href="public/static/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .wrap__bg {
+            background: url("public/static/img/bg2.png") center center no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 110%;
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+
+  <body class="login-body">
+    <div class="wrap__bg"></div>
+    <div class="container" >
+
+      <form class="form-signin" style="margin-right: 200px;margin-top: 60px;" method="POST" action="{:url('http://bookshare5.com/?s=index/index/check')}" >
+        <h2 class="form-signin-heading">立即登录</h2>
+        <div class="login-wrap">
+            <input type="text" class="form-control" placeholder="请输入账号" autofocus name="username" value="">
+            <input type="password" class="form-control" placeholder="请输入密码" name="password">
+            <label class="checkbox">
+                <input type="checkbox" name="remember" > 记住我
+                <span class="pull-right">
+                    <a data-toggle="modal" href="{:url('http://bookshare5.com/?s=index/index/index','#myModal')}"> 忘记密码?</a>
+                </span>
+            </label>
+            
+            <!-- 验证码 -->
+            <div>
+                <form method="post" action="">
+                    <p>验证码图片：
+                        <img id="captcha_img" border="1" src="public/common/captcha.php?r=<?php echo 'rand();'; ?>" alt="" width="100" height="30" >
+                        <a href="javascript:void(0)" onclick=
+                        "document.getElementById('captcha_img').src='public/common/captcha.php?r='+Math.random()">
+                        换一个？</a>
+                    </p>
+            
+                    <p>请输入验证码：
+                        <input type="text" name="authcode" value="" />
+                    </p>
+            
+                </form>
+            </div>
+
+            <button class="btn btn-lg btn-login btn-block" type="submit">登录</button>
+            
+            <div class="registration">
+                还没有账号？
+                <a class="" href="http://bookshare5.com/?s=index/index/register">
+                    创建账号
+                </a>
+            </div>
+
+
+        </div>
+
+          <!-- Modal -->
+          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">忘记密码 ?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>验证码错误了</p>
+                        <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                        <button class="btn btn-success" name="login" type="button">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal -->
+
+    </form>
+
+  </div>
+
+
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,364 @@
+<?php if(!session_id()) session_start();?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <!-- <meta name="author" content="Mosaddek"> -->
+        <!-- <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina"> -->
+        <link rel="shortcut icon" href="public/static/img/touxiang.png">
+    
+        <title>校园图书共享平台</title>
+    
+        
+        <!-- Bootstrap core CSS -->
+        <link href="public/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="public/static/css/bootstrap-reset.css" rel="stylesheet">
+        <!--external css-->
+        <link href="public/static/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="public/static/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="public/static/css/owl.carousel.css" type="text/css">
+        <link rel="stylesheet" href="public/static/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="public/static/assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+        <link rel="stylesheet" type="text/css" href="public/static/assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
+        <link rel="stylesheet" type="text/css" href="public/static/assets/bootstrap-datepicker/css/datepicker.css" />
+        <link rel="stylesheet" type="text/css" href="public/static/assets/bootstrap-timepicker/compiled/timepicker.css" />
+        <link rel="stylesheet" type="text/css" href="public/static/assets/bootstrap-colorpicker/css/colorpicker.css" />
+        <link rel="stylesheet" type="text/css" href="public/static/assets/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+        <link rel="stylesheet" type="text/css" href="public/static/assets/bootstrap-datetimepicker/css/datetimepicker.css" />
+        <link rel="stylesheet" type="text/css" href="public/static/assets/jquery-multi-select/css/multi-select.css" />
+    
+        
+        <!--right slidebar-->
+        <link href="public/static/css/slidebars.css" rel="stylesheet">
+    
+        <!-- Custom styles for this template -->
+        <link href="public/static/css/style.css" rel="stylesheet">
+        <link href="public/static/css/style-responsive.css" rel="stylesheet" />
+    
+        <!--  summernote -->
+        <link href="public/static/assets/summernote/dist/summernote.css" rel="stylesheet">
+    
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+        <!--[if lt IE 9]>
+          <script src="public/static/js/html5shiv.js"></script>
+          <script src="public/static/js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+   <body>
+
+    <section id="container" class="">
+        <header class="header blue-bg">
+            <!-- 左边滑框 -->
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-bars tooltips"></div>
+            </div>
+            <!-- logo -->
+            <a href="" class="logo">Book<span>sharing</span></a>
+
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        <input type="text" class="form-control search" placeholder="Search">
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="public/static/public/static/img/touxiang.png">
+                            <span class="username">农礼铭</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <!-- <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li> -->
+                            <!-- <li><a href="#"><i class="fa fa-cog"></i>设置</a></li> -->
+                            <!-- <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li> -->
+                            <li><a href="http://bookshare5.com/?s=index/index/logout/"><i class="fa fa-key"></i>退出</a></li>
+                        </ul>
+                    </li>
+                    <li class="sb-toggle-right">
+                        <i class="fa  fa-align-right"></i>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+
+        </header>
+
+        
+        <!-- 左侧栏 -->
+        <aside>
+
+            <div id="sidebar"  class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li>
+                        <a class="active" href="http://bookshare5.com/?s=index/book/list/">
+                            <i class="fa fa-dashboard"></i>
+                            <span>图书借阅</span>
+                        </a>
+                    </li>
+    
+                    <li class="sub-menu">
+                        <a href="javascript:;" >
+                            <i class="fa fa-book" ></i>
+                            <span>分享管理</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a  href="http://bookshare5.com/?s=index/book/share/">图书分享</a></li>
+                            <li><a  href="http://bookshare5.com/?s=index/book/shareList/">我的分享</a></li>
+                        </ul>
+                    </li>
+    
+                    <li class="sub-menu">
+                        <a href="javascript:;" >
+                            <i class="fa fa-th"></i>
+                            <span>借阅历史</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a  href="http://bookshare5.com/?s=index/history/lendhistory/">我借出的书</a></li>
+                            <li><a  href="http://bookshare5.com/?s=index/history/borrowhistory/">我借入的书</a></li>
+                        </ul>
+                    </li>
+    
+                    <li class="sub-menu">
+                        <a href="javascript:;" >
+                            <i class=" fa fa-envelope"></i>
+                            <span>消息通知</span>
+                        </a>
+                        <ul class="sub">
+                            <!-- <li><a  href="boxed_page.html">图书上传通知</a></li> -->
+                            <li><a  href="http://bookshare5.com/?s=index/Message/borrowMessage/">借阅反馈</a></li>
+                            <li><a  href="http://bookshare5.com/?s=index/Message/lendMessage/">向我借书</a></li>
+                            <li><a  href="http://bookshare5.com/?s=index/Message/returnBook/">还书提醒</a></li>
+                            <li><a  href="http://bookshare5.com/?s=index/Message/returnConfirm/">还书确认</a></li>
+                        </ul>
+                    </li>
+    
+                    <li class="sub-menu">
+                        <a href="http://bookshare5.com/?s=index/user/user/" >
+                            <i class="fa fa-user"></i>
+                            <span>个人信息</span>
+                        </a>
+                    </li>
+    
+                </ul>
+    
+                <!-- sidebar menu end-->
+            </div>
+          </aside>
+    
+
+        
+
+        <!-- 主内容 -->
+        <section id="main-content">
+            <section class="wrapper">
+                
+
+                <!-- 从控制层获取数据 -->
+                <?php 
+                    use app\common\model\Book as ModelBook;
+                    use app\common\model\User as ModelUser;
+
+                    $owner_id=$_GET['owner_id'];
+                    $book = new ModelBook();
+                    $data = $book->getOneBook($owner_id);
+                    $res=$data[0];
+                    //$user = $ModelUser();
+                    
+                ?>
+                <section class="panel">
+                    <div class="bio-graph-heading">
+                        <h4 >图书详情</h4>
+                    </div>
+                    <div class="panel-body bio-graph-info">
+                        <h1 > 图书信息</h1>
+                        <form class="form-horizontal" role="form"  method="POST" action="http://bookshare5.com/?s=index/book/borrowAction&owner_id={$owner_id}" >
+                            
+                            <div class="form-group">
+                                <img src="{$res['图片']}" name="book_url" height="40%" width="40%">                            
+                            </div>
+                            
+                            <div class="form-group">
+                                <label  class="col-lg-2 control-label">ISBN </label>
+                                <div class="col-lg-6">
+                                    <label  class="">{$res['书号']} </label>
+                                </div>
+                            </div>
+
+                            
+                            <div class="form-group">
+                                <label  class="col-lg-2 control-label">书名</label>
+                                <div class="col-lg-6">
+                                    <label  class="">{$res['书名']} </label>
+
+                                    <!-- <input type="text" name="book_name" value="{$res['书名']}" class="form-control" id="l-name" placeholder=" "> -->
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-lg-2 control-label">作者</label>
+                                <div class="col-lg-6">
+                                    <label  class="">{$res['作者']} </label>
+
+                                    <!-- <input type="text" name="book_author" value="{$res['作者']}" class="form-control" id="c-name" placeholder=" "> -->
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label  class="col-lg-2 control-label">出版社</label>
+                                <div class="col-lg-6">
+                                    <label  class="">{$res['出版社']} </label>
+
+                                    <!-- <input type="text"  name="book_publisher" value="{$res['出版社']}" class="form-control" id="b-day" placeholder=" "> -->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-lg-2 control-label">分类</label>
+                                <div class="col-lg-6">
+                                    <label  class="">{$res['类别']} </label>
+
+                                    <!-- <input type="text" name="book_class" value="{$res['类别']}" class="form-control" id="occupation" placeholder=" "> -->
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  class="col-lg-2 control-label">内容简介</label>
+                                <div class="col-lg-10">
+                                    <label  class="" >{$res['描述']} </label>
+
+                                    <!-- <textarea name="book_description" class="form-control" disabled="false" >{$res['描述']}</textarea> -->
+                                </div>
+                            </div>
+                            
+                            <h1 > 分享人信息</h1>
+
+
+                            <div class="form-group">
+                                <label  class="col-lg-2 control-label">分享者</label>
+                                <div class="col-lg-6">
+                                    <label  class="">{$res['分享者']} </label>
+                                </div>
+                            </div>
+
+                              
+                            <div class="form-group">
+                                <label  class="col-lg-2 control-label">联系方式</label>
+                                <div class="col-lg-6">
+                                    <label  class="">{$res['联系方式']} </label>
+
+                                    <!-- <input type="text" name="book_name" value="{$res['书名']}" class="form-control" id="l-name" placeholder=" "> -->
+                                </div>
+                            </div>
+                            
+                            <h1 >借书申请</h1>
+
+                            <!-- <div class="form-group">
+                                <label  class="col-lg-2 control-label">归还日期</label>
+                                <div class="col-md-4">
+                                    <div class="input-group date form_datetime-component">
+                                        <input type="text" name="return_date" class="form-control" readonly="" size="16">
+                                          <span class="input-group-btn">
+                                            <button type="button" class="btn btn-info date-set" ><i class="fa fa-calendar"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="form-group">
+                                <label  class="col-lg-2 control-label">归还日期</label>
+                                <div class="col-md-4">
+                                    <div data-date="2021-05-22T16:00:00Z" class="input-group date form_datetime-adv">
+                                        <input type="text" name="return_date" class="form-control" readonly="" size="16">
+                                        <div class="input-group-btn">
+                                            <!-- <button type="button" class="btn btn-danger date-reset"><i class="fa fa-times"></i></button> -->
+                                            <button type="button" class="btn btn-info date-set"><i class="fa fa-calendar"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="form-group">
+                                <label class="col-lg-2 control-label">Advance Datetimepicker</label>
+                                <div class="col-md-4">
+                                    <div data-date="2012-12-21T15:25:00Z" class="input-group date form_datetime-adv">
+                                        <input type="text" class="form-control" readonly="" size="16">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-danger date-reset"><i class="fa fa-times"></i></button>
+                                            <button type="button" class="btn btn-warning date-set"><i class="fa fa-calendar"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            
+                            <div class="form-group">
+                                <label  class="col-lg-2 control-label">借书理由</label>
+                                <div class="col-lg-10">
+                                    <textarea name="book_description" class="form-control" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button type="submit" name="img_url" value="{$res['图片']}" class="btn btn-success" >提交</button>
+                                    <button type="button" class="btn btn-default" action="http://bookshare5.com/?s=index/books/share')}" >取消</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            </section>
+            <!-- </form> -->
+
+        <!--footer start-->
+        <footer class="site-footer"  >
+            <div class="text-center" >
+                校园图书共享平台
+                <a href="#" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+            </section>
+        </section>
+    </section>
+    
+
+ 
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="public/static/js/jquery.js"></script>
+    <script src="public/static/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="public/static/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="public/static/js/jquery.scrollTo.min.js"></script>
+    <script src="public/static/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="public/static/assets/jquery-knob/js/jquery.knob.js"></script>
+    <script src="public/static/js/respond.min.js" ></script>
+
+  <!--right slidebar-->
+  <script src="public/static/js/slidebars.min.js"></script>
+
+    <!--common script for all pages-->
+    <script src="public/static/js/common-scripts.js"></script>
+
+    <!--script for this page-->
+    <script type="text/javascript" src="public/static/assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="public/static/assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    
+    <script src="public/static/js/form-component.js"></script>
+    <script src="public/static/js/advanced-form-components.js"></script>
+
+  <script>
+
+      //knob
+      $(".knob").knob();
+
+  </script>
+
+
+
+  </body>
+</html>
